@@ -18,8 +18,8 @@
     .grade { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .9rem 1rem; }
     .campo { display: flex; flex-direction: column; gap: .25rem; }
     .campo-completo { grid-column: 1 / -1; }
-    input, select { font: inherit; padding: .55rem; border: 1px solid #7b8a7e; border-radius: 4px; }
-    input:focus, select:focus { outline: 3px solid #e6a94b; }
+    input, select, textarea { font: inherit; padding: .55rem; border: 1px solid #7b8a7e; border-radius: 4px; }
+    input:focus, select:focus, textarea:focus { outline: 3px solid #e6a94b; }
     .opcao { display: inline-flex; align-items: center; gap: .4rem; margin: .5rem 1rem .3rem 0; }
     button { font: inherit; font-weight: bold; padding: .7rem 1.1rem; border: 0; border-radius: 5px; background: #e6a94b; cursor: pointer; }
     .ajuda { font-size: .9rem; color: #4b5b4e; }
@@ -65,7 +65,7 @@
             <option value="RS">Rio Grande do Sul</option><option value="RO">Rondônia</option><option value="RR">Roraima</option><option value="SC">Santa Catarina</option>
             <option value="SP">São Paulo</option><option value="SE">Sergipe</option><option value="TO">Tocantins</option>
           </select></div>
-          <div class="campo campo-completo"><label for="endereco">Endereço (rua, número e complemento) *</label><input id="endereco" name="endereco" type="text" autocomplete="street-address" required></div>
+          <div class="campo campo-completo"><label for="endereco">Endereço (rua, número e complemento) *</label><textarea id="endereco" name="endereco" autocomplete="street-address" rows="2" required></textarea></div>
           <div class="campo"><label for="cidade">Cidade *</label><input id="cidade" name="cidade" type="text" autocomplete="address-level2" required></div>
         </div>
       </fieldset>
