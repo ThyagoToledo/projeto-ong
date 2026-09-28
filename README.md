@@ -21,6 +21,7 @@ projeto-ong/
     ├── css/
     │   └── estilos.css
     ├── js/
+    │   ├── feedback.js
     │   └── menu.js
     └── images/
         ├── sementes-comunidade.webp
@@ -28,7 +29,7 @@ projeto-ong/
         └── sementes-comunidade.png
 ```
 
-O CSS compartilhado define cores, cinco tamanhos de texto, espaçamentos modulares e regras responsivas com Grid e Flexbox em cinco breakpoints: 1200, 1024, 700, 520 e 380 px. Até 700 px, o menu pode ser aberto pelo botão hambúrguer; o submenu de projetos usa o elemento nativo `details`. O JavaScript atualiza o estado acessível do botão e fecha o menu ao escolher um link ou pressionar Escape. A página inicial escolhe WebP e oferece PNG e JPEG como alternativas para a ilustração.
+O CSS compartilhado define cores, cinco tamanhos de texto, espaçamentos modulares e regras responsivas com Grid e Flexbox em cinco breakpoints: 1200, 1024, 700, 520 e 380 px. Até 700 px, o menu pode ser aberto pelo botão hambúrguer; o submenu de projetos usa o elemento nativo `details`. A página de projetos mostra badges e um alerta informativo. No cadastro, o envio válido exibe uma confirmação acessível em toast e modal nativo (`dialog`); os dados não são enviados a um servidor. O JavaScript atualiza o estado acessível do menu e controla a confirmação do formulário. A página inicial escolhe WebP e oferece PNG e JPEG como alternativas para a ilustração.
 
 ## Como visualizar
 

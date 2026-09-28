@@ -72,8 +72,15 @@
       </fieldset>
       <button type="submit">Enviar cadastro</button>
     </form>
+    <p class="toast" id="mensagem-cadastro" role="status" aria-live="polite" hidden></p>
+    <dialog class="modal-feedback" id="confirmacao-cadastro" aria-labelledby="titulo-confirmacao">
+      <h2 id="titulo-confirmacao">Cadastro recebido!</h2>
+      <p>Obrigado por querer colaborar. Nossa equipe entrará em contato para conversar sobre os próximos passos.</p>
+      <form method="dialog"><button type="submit">Entendi</button></form>
+    </dialog>
   </main>
   <footer><p>Instituto Sementes do Amanhã · <a href="mailto:contato@sementesdoamanha.org.br">contato@sementesdoamanha.org.br</a></p></footer>
   <script src="assets/js/menu.js" defer></script>
+  <script src="assets/js/feedback.js" defer></script>
 </body>
 </html>
