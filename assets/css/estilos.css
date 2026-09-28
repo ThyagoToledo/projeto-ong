@@ -74,6 +74,68 @@ nav ul {
   list-style: none;
 }
 
+.menu-toggle {
+  display: none;
+}
+
+.menu-principal {
+  align-items: center;
+}
+
+.menu-dropdown {
+  position: relative;
+}
+
+.menu-dropdown summary {
+  color: var(--cor-superficie);
+  font-weight: bold;
+  cursor: pointer;
+  list-style: none;
+}
+
+.menu-dropdown summary::-webkit-details-marker {
+  display: none;
+}
+
+.menu-dropdown summary::after {
+  content: " ▾";
+}
+
+.submenu {
+  position: absolute;
+  z-index: 5;
+  top: 100%;
+  left: 0;
+  min-width: 220px;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+  padding: var(--espaco-2);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--espaco-1);
+  background: var(--cor-superficie);
+}
+
+.menu-dropdown details:not([open]) > .submenu {
+  display: none;
+}
+
+.menu-dropdown details[open] > .submenu {
+  display: flex;
+}
+
+.submenu a {
+  display: block;
+  padding: var(--espaco-2);
+  color: var(--cor-texto);
+  text-decoration: none;
+}
+
+.submenu a:hover {
+  background: var(--cor-fundo);
+  color: var(--cor-verde-escuro);
+}
+
 nav a,
 footer a {
   color: var(--cor-superficie);
@@ -140,6 +202,11 @@ a {
 
 a:hover {
   color: var(--cor-verde);
+}
+
+.menu-dropdown summary:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--cor-destaque);
 }
 
 .botao,
@@ -220,7 +287,8 @@ input:focus-visible,
 select:focus-visible,
 textarea:focus-visible,
 button:focus-visible,
-a:focus-visible {
+a:focus-visible,
+summary:focus-visible {
   outline: 3px solid var(--cor-foco);
   outline-offset: 2px;
 }
@@ -286,6 +354,50 @@ footer p {
     font-size: var(--fonte-titulo);
   }
 
+  nav {
+    width: 100%;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--espaco-2);
+  }
+
+  .menu-principal {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--espaco-2);
+    overflow: hidden;
+    transition: max-height 0.25s ease, opacity 0.2s ease;
+  }
+
+  html.js .menu-principal {
+    max-height: 0;
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  html.js .menu-principal.is-open {
+    max-height: 30rem;
+    padding-top: var(--espaco-3);
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .menu-dropdown,
+  .menu-dropdown details {
+    width: 100%;
+  }
+
+  .submenu {
+    position: static;
+    width: 100%;
+    min-width: 0;
+    margin-top: var(--espaco-2);
+  }
+
   .hero {
     grid-template-columns: 1fr;
   }
@@ -333,5 +445,9 @@ footer p {
   button {
     width: 100%;
     text-align: center;
+  }
+
+  .menu-toggle {
+    width: auto;
   }
 }

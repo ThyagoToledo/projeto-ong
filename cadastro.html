@@ -10,9 +10,23 @@
   <header>
     <h1>Cadastro de participação</h1>
     <nav aria-label="Menu principal">
-      <ul>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">
+        <span class="icone-menu" aria-hidden="true">☰</span>
+        <span>Menu</span>
+      </button>
+      <ul id="menu-principal" class="menu-principal">
         <li><a href="index.html">Início</a></li>
-        <li><a href="projetos.html">Nossos projetos</a></li>
+        <li class="menu-dropdown">
+          <details>
+            <summary>Projetos</summary>
+            <ul class="submenu">
+              <li><a href="projetos.html">Todos os projetos</a></li>
+              <li><a href="projetos.html#projeto-social">Projetos sociais</a></li>
+              <li><a href="projetos.html#voluntariado">Voluntariado</a></li>
+              <li><a href="projetos.html#doacoes">Doações</a></li>
+            </ul>
+          </details>
+        </li>
         <li><a href="cadastro.html" aria-current="page">Quero participar</a></li>
       </ul>
     </nav>
@@ -60,5 +74,6 @@
     </form>
   </main>
   <footer><p>Instituto Sementes do Amanhã · <a href="mailto:contato@sementesdoamanha.org.br">contato@sementesdoamanha.org.br</a></p></footer>
+  <script src="assets/js/menu.js" defer></script>
 </body>
 </html>
