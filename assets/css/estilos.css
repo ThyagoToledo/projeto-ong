@@ -1,0 +1,287 @@
+/* Design system básico do Instituto Sementes do Amanhã */
+:root {
+  /* Cores principais */
+  --cor-verde-escuro: #315d45;
+  --cor-verde: #52785e;
+  --cor-verde-claro: #b9d39c;
+  --cor-verde-fundo: #e8f1df;
+  --cor-destaque: #e6a94b;
+
+  /* Cores neutras e de apoio */
+  --cor-fundo: #f4f5ed;
+  --cor-superficie: #ffffff;
+  --cor-texto: #26352b;
+  --cor-texto-suave: #526158;
+  --cor-borda: #bdc9bf;
+  --cor-foco: #8b5e12;
+
+  /* Tipografia: cinco tamanhos */
+  --fonte-pequena: 0.875rem;
+  --fonte-base: 1rem;
+  --fonte-media: 1.25rem;
+  --fonte-titulo: 1.5rem;
+  --fonte-destaque: 2rem;
+  --familia-fonte: Arial, sans-serif;
+
+  /* Espaçamentos modulares, em múltiplos de 4 px */
+  --espaco-1: 0.25rem;
+  --espaco-2: 0.5rem;
+  --espaco-3: 0.75rem;
+  --espaco-4: 1rem;
+  --espaco-6: 1.5rem;
+  --espaco-8: 2rem;
+  --espaco-12: 3rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+  font-family: var(--familia-fonte);
+  font-size: var(--fonte-base);
+  line-height: 1.6;
+}
+
+header,
+footer {
+  padding: var(--espaco-4) max(var(--espaco-4), calc((100% - 1000px) / 2));
+  background: var(--cor-verde-escuro);
+  color: var(--cor-superficie);
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--espaco-4);
+}
+
+header h1 {
+  margin: 0;
+  font-size: var(--fonte-destaque);
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espaco-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav a,
+footer a {
+  color: var(--cor-superficie);
+}
+
+nav a {
+  font-weight: bold;
+  text-underline-offset: var(--espaco-1);
+}
+
+nav a[aria-current="page"] {
+  text-decoration-thickness: 3px;
+  text-decoration-color: var(--cor-destaque);
+}
+
+main {
+  width: min(100% - var(--espaco-8), 1000px);
+  margin: 0 auto;
+  padding: var(--espaco-6) 0;
+}
+
+section,
+form {
+  margin: var(--espaco-4) 0;
+  padding: var(--espaco-6);
+  border-radius: var(--espaco-2);
+  background: var(--cor-superficie);
+}
+
+h2 {
+  color: var(--cor-verde-escuro);
+  font-size: var(--fonte-titulo);
+  line-height: 1.25;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  align-items: center;
+  gap: var(--espaco-6);
+}
+
+.hero h2 {
+  font-size: var(--fonte-titulo);
+}
+
+.hero > div {
+  grid-column: span 7;
+}
+
+.hero > picture {
+  grid-column: span 5;
+}
+
+.hero img {
+  display: block;
+  width: 100%;
+  border-radius: var(--espaco-2);
+}
+
+a {
+  color: var(--cor-verde-escuro);
+}
+
+a:hover {
+  color: var(--cor-verde);
+}
+
+.botao,
+button {
+  display: inline-block;
+  padding: var(--espaco-3) var(--espaco-4);
+  border: 0;
+  border-radius: var(--espaco-1);
+  background: var(--cor-destaque);
+  color: var(--cor-texto);
+  font: inherit;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.botao:hover,
+button:hover {
+  background: var(--cor-verde-claro);
+  color: var(--cor-texto);
+}
+
+.passos {
+  padding: var(--espaco-3) var(--espaco-6);
+  background: var(--cor-fundo);
+}
+
+form {
+  border: 1px solid var(--cor-borda);
+}
+
+fieldset {
+  margin: var(--espaco-4) 0;
+  padding: var(--espaco-4);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--espaco-2);
+}
+
+legend {
+  padding: 0 var(--espaco-2);
+  color: var(--cor-verde-escuro);
+  font-weight: bold;
+}
+
+.grade {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--espaco-3) var(--espaco-4);
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-1);
+}
+
+.campo-completo {
+  grid-column: 1 / -1;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: var(--espaco-2);
+  border: 1px solid var(--cor-texto-suave);
+  border-radius: var(--espaco-1);
+  background: var(--cor-superficie);
+  color: var(--cor-texto);
+  font: inherit;
+}
+
+input[type="radio"] {
+  width: auto;
+}
+
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--cor-foco);
+  outline-offset: 2px;
+}
+
+.opcao {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--espaco-2);
+  margin: var(--espaco-2) var(--espaco-4) var(--espaco-1) 0;
+}
+
+.ajuda,
+small {
+  color: var(--cor-texto-suave);
+  font-size: var(--fonte-pequena);
+}
+
+footer h2 {
+  color: var(--cor-superficie);
+  font-size: var(--fonte-media);
+}
+
+footer p {
+  margin: var(--espaco-2) 0;
+}
+
+@media (max-width: 700px) {
+  header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  header h1 {
+    font-size: var(--fonte-titulo);
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .hero > div,
+  .hero > picture {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 520px) {
+  main {
+    width: min(100% - var(--espaco-4), 1000px);
+  }
+
+  section,
+  form {
+    padding: var(--espaco-4);
+  }
+
+  .grade {
+    grid-template-columns: 1fr;
+  }
+
+  .campo-completo {
+    grid-column: auto;
+  }
+}

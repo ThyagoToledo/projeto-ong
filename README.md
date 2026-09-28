@@ -1,6 +1,6 @@
 # Instituto Sementes do Amanhã
 
-Site estático demonstrativo de uma ONG, feito para uma atividade acadêmica de HTML5 semântico, páginas conectadas e formulário com validação nativa.
+Site estático demonstrativo de uma ONG, feito para atividades acadêmicas de HTML5 semântico, formulários, design system e layout responsivo.
 
 ## Páginas
 
@@ -15,14 +15,18 @@ projeto-ong/
 ├── index.html
 ├── projetos.html
 ├── cadastro.html
+├── README.md
+├── .gitignore
 └── assets/
+    ├── css/
+    │   └── estilos.css
     └── images/
         ├── sementes-comunidade.webp
         ├── sementes-comunidade.jpg
         └── sementes-comunidade.png
 ```
 
-A página inicial usa WebP com fontes PNG e JPEG como alternativas. Todas as versões representam a mesma ilustração e ficam disponíveis localmente.
+O CSS compartilhado define cores, cinco tamanhos de texto, espaçamentos modulares e regras responsivas com Grid e Flexbox. A página inicial escolhe WebP e oferece PNG e JPEG como alternativas para a ilustração.
 
 ## Como visualizar
 
