@@ -26,7 +26,7 @@ projeto-ong/
         └── sementes-comunidade.png
 ```
 
-O CSS compartilhado define cores, cinco tamanhos de texto, espaçamentos modulares e regras responsivas com Grid e Flexbox. A página inicial escolhe WebP e oferece PNG e JPEG como alternativas para a ilustração.
+O CSS compartilhado define cores, cinco tamanhos de texto, espaçamentos modulares e regras responsivas com Grid e Flexbox em cinco breakpoints: 1200, 1024, 700, 520 e 380 px. A página inicial escolhe WebP e oferece PNG e JPEG como alternativas para a ilustração.
 
 ## Como visualizar
 

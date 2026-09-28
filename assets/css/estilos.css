@@ -247,6 +247,35 @@ footer p {
   margin: var(--espaco-2) 0;
 }
 
+@media (min-width: 1200px) {
+  header {
+    padding-right: max(var(--espaco-8), calc((100% - 1120px) / 2));
+    padding-left: max(var(--espaco-8), calc((100% - 1120px) / 2));
+  }
+
+  main {
+    width: calc(100% - var(--espaco-12));
+    max-width: 1120px;
+  }
+}
+
+@media (max-width: 1024px) {
+  header {
+    gap: var(--espaco-3);
+  }
+
+  header h1 {
+    font-size: var(--fonte-titulo);
+  }
+
+  nav ul {
+    gap: var(--espaco-3);
+  }
+
+  .hero {
+    gap: var(--espaco-4);
+  }
+}
 @media (max-width: 700px) {
   header {
     align-items: flex-start;
@@ -283,5 +312,26 @@ footer p {
 
   .campo-completo {
     grid-column: auto;
+  }
+}
+@media (max-width: 380px) {
+  header,
+  footer {
+    padding-right: var(--espaco-3);
+    padding-left: var(--espaco-3);
+  }
+
+  nav ul {
+    gap: var(--espaco-2);
+  }
+
+  nav a {
+    font-size: var(--fonte-pequena);
+  }
+
+  .botao,
+  button {
+    width: 100%;
+    text-align: center;
   }
 }
